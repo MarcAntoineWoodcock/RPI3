@@ -8,45 +8,46 @@
 - cd ..
 
 We source:
-> source poky/oe-init-build-env rpi-estei-build
-> We give access to our 'layers':
+- source poky/oe-init-build-env rpi-estei-build
+- We give access to our 'layers':
 
-bitbake-layers add-layer ../sources/meta-raspberrypi  
-bitbake-layers add-layer ../sources/meta-openembedded/meta-oe/
-bitbake-layers add-layer ../sources/meta-openembedded/meta-python/
-bitbake-layers add-layer ../sources/meta-openembedded/meta-networking.
-in the ' conf/local.conf' file: -replace MACHINE? = "qemux86" by MACHINE? = "raspberrypi3" -Add package-management to the variable like this--->
+- bitbake-layers add-layer ../sources/meta-raspberrypi  
+- bitbake-layers add-layer ../sources/meta-openembedded/meta-oe/
+- bitbake-layers add-layer ../sources/meta-openembedded/meta-python/
+- bitbake-layers add-layer ../sources/meta-openembedded/meta-networking.
+In the ' conf/local.conf' file: -replace MACHINE? = "qemux86" by MACHINE? = "raspberrypi3" 
+Add package-management to the variable like this--->
+- EXTRA_IMAGE_FEATURES? = 'package-management debug-tweaks'
 
-EXTRA_IMAGE_FEATURES? = 'package-management debug-tweaks'
 Then we start the generation of the image:
+- bitbake rpi-basic-image
 
-bitbake rpi-basic-image
 The image that you should have on the raspberry terminal :
 
-Loading cache: 100%|########################################################################################################################################################################|Time: 0:00:00
-Loaded 2637 entries from dependency cache.
-NOTE:Resolving any missing task queue dependencies
-Build Configuration :
+- Loading cache: - 100%|############################################################################################################################- ############################################|Time: 0:00:00
+- Loaded 2637 entries from dependency cache.
+- NOTE:Resolving any missing task queue dependencies
+- Build Configuration :
 
-BB_VERSION       = "1.34.0"
-BUILD_SYS         ="x86_64-linux"
-NATIVELSBSTRING   = "ubuntu-16.04"
-TARGET_SYS        ="arm-poky-linux-gnueabi"
-MACHINE           ="raspberrypi3"
-DISTRO            ="poky"
-DISTRO_VERSION    = "2.3.2"
-TUNE_FEATURES     = "arm armv7ve vfp thumb neon vfpv4callconvention-hard cortexa7"
-TARGET_FPU        = "hard"
-meta             
-meta-poky         
-meta-yocto-bsp    ="pyro:827eb5b232d54909377e2b18d39d34d6c1c21413"
-meta-raspberrypi  ="pyro:ed3b254454494b36d4205818e369f59718704e60"
-meta-oe           
-meta-python       
-meta-networking   ="pyro:dfbdd28d206a74bf264c2f7ee0f7b3e5af587796"
-Once our image is created, it only remains to put on an SD card with the software win32diskimager :
+- BB_VERSION       = "1.34.0"
+- BUILD_SYS         ="x86_64-linux"
+- NATIVELSBSTRING   = "ubuntu-16.04"
+- TARGET_SYS        ="arm-poky-linux-gnueabi"
+- MACHINE           ="raspberrypi3"
+- DISTRO            ="poky"
+- DISTRO_VERSION    = "2.3.2"
+- TUNE_FEATURES     = "arm armv7ve vfp thumb neon vfpv4callconvention-hard cortexa7"
+- TARGET_FPU        = "hard"
+- meta             
+- meta-poky         
+- meta-yocto-bsp    ="pyro:827eb5b232d54909377e2b18d39d34d6c1c21413"
+- meta-raspberrypi  ="pyro:ed3b254454494b36d4205818e369f59718704e60"
+- meta-oe           
+- meta-python       
+- meta-networking   ="pyro:dfbdd28d206a74bf264c2f7ee0f7b3e5af587796"
+- Once our image is created, it only remains to put on an SD card with the software win32diskimager :
 
-https://sourceforge.NET/projects/win32diskimager/
+- https://sourceforge.NET/projects/win32diskimager/
 
 Then we put our SD card in the Raspberry pi 3.
 
