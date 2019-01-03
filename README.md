@@ -1,5 +1,5 @@
 # RPI3
-YOCTO Project on Raspberry PI 3
+YOCTO Project on Raspberry PI 3\n
 gitclone -b pyro git://git.yoctoproject.org/poky.git
 mkdir sources
 cd sources
