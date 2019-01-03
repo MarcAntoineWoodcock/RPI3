@@ -53,29 +53,31 @@ Then we put our SD card in the Raspberry pi 3.
 
 Later in the project, we preferred to used Raspbian to try and see the packages we need:
 
-Raspberry IP configuration
+## Raspberry IP configuration
 
-Open the console from the Raspberry Pi
-We begin by updating the Raspberry Pi
-sudo apt update
-sudo apt upgrade
-Once the updates have been completed, we will create public and private folders that will be accessible on the NAS.
+- Open the console from the Raspberry Pi
+- We begin by updating the Raspberry Pi
+- sudo apt update
+- sudo apt upgrade
+- Once the updates have been completed, we will create public and private folders that will be accessible on the NAS.
 
-sudo mkdir/home/shares
-sudo mkdir/home/shares/public
-sudo chown-r/home/shares/public root:users
-sudo chmod-r ug = rwx, o = rx/home/shares/public
-Creation of the NAS with Samba
+- sudo mkdir/home/shares
+- sudo mkdir/home/shares/public
+- sudo chown-r/home/shares/public root:users
+- sudo chmod-r ug = rwx, o = rx/home/shares/public
 
-The basic configuration of the Raspberry pi being made, we will now be able to install the NAS. To do this, so we will use Samba, a software able to manage the networking of a hard drive to be able to access it from any computer connected to the network or operating system.
 
-So, let's start by installing Samba on the Raspberry Pi using the following command:
+# Creation of the NAS with Samba
 
-sudo apt install samba samba-common-bin
-After that, we will edit the configuration file.
+- The basic configuration of the Raspberry pi being made, we will now be able to install the NAS. To do this, so we will use Samba, a software able to manage the networking of a hard drive to be able to access it from any computer connected to the network or operating system.
 
-sudo nano /etc/samba/smb.conf
-If you want to limit connections to your NAS requesting authentication, go to the line
+- So, let's start by installing Samba on the Raspberry Pi using the following command:
+
+- sudo apt install samba samba-common-bin
+- After that, we will edit the configuration file.
+
+- sudo nano /etc/samba/smb.conf
+- If you want to limit connections to your NAS requesting authentication, go to the line
 
 # Authentication #
 and add the following line right below
