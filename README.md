@@ -1,6 +1,6 @@
 # RPI3
 ## YOCTO Project on Raspberry PI 3
-> gitclone -b pyro git://git.yoctoproject.org/poky.git
+> gitclone -b pyro git://git.yoctoproject.org/poky.git\n
 > mkdir sources
 > cd sources
 > git clone -b pyro git://git.openembedded.org/meta-openembedded
