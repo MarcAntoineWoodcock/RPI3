@@ -1,15 +1,15 @@
 # RPI3
-YOCTO Project on Raspberry PI 3\n
-gitclone -b pyro git://git.yoctoproject.org/poky.git
-mkdir sources
-cd sources
-git clone -b pyro git://git.openembedded.org/meta-openembedded
-git clone -b pyro https://github.com/agherzan/meta-raspberrypi.git
-cd ..
-We source:
+## YOCTO Project on Raspberry PI 3
+> gitclone -b pyro git://git.yoctoproject.org/poky.git
+> mkdir sources
+> cd sources
+> git clone -b pyro git://git.openembedded.org/meta-openembedded
+> git clone -b pyro https://github.com/agherzan/meta-raspberrypi.git
+> cd ..
 
-source poky/oe-init-build-env rpi-estei-build
-We give access to our 'layers':
+We source:
+> source poky/oe-init-build-env rpi-estei-build
+> We give access to our 'layers':
 
 bitbake-layers add-layer ../sources/meta-raspberrypi  
 bitbake-layers add-layer ../sources/meta-openembedded/meta-oe/
